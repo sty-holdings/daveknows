@@ -14,9 +14,7 @@ class ConfirmationPage extends BaseWidget {
   final passKey = GlobalKey<FormFieldState>();
   final rePassKey = GlobalKey<FormFieldState>();
 
-  final dynamic args;
-
-  ConfirmationPage(super.provider, this.args) : super(isWhitelist: true);
+  ConfirmationPage(super.provider) : super(isWhitelist: true);
 
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {
@@ -25,120 +23,64 @@ class ConfirmationPage extends BaseWidget {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            if (args?['key'] == Constants.httpCreateUser)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
-                        L10nApp.accountCreated_1.$,
+                        L10nApp.accountCreated_5.$,
                         style: theme.textTheme.titleMedium,
                       )),
-                  Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
-                      child: Text(
-                        L10nApp.accountCreated_2.$,
-                        style: theme.textTheme.titleMedium,
-                      )),
-                  const Padding(
-                      padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                      child: Text(
-                        Constants.LBL_Support_Email,
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Constants.Sec_Cyan,
-                            fontWeight: FontWeight.bold),
-                      )),
-                  Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
-                      child: Text(
-                        L10nApp.accountCreated_3.$,
-                        style: theme.textTheme.titleMedium,
-                      )),
-                  Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 10, 0, 20),
-                      child: Text(
-                        L10nApp.accountCreated_4.$,
-                        style: theme.textTheme.titleMedium,
-                      )),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                          width: 300,
-                          child: Text(
-                            L10nApp.accountCreated_5.$,
-                            style: const TextStyle(
-                                fontSize: 18,
-                                color: Constants.Sec_Cyan,
-                                fontWeight: FontWeight.bold),
-                          )),
-                    ],
-                  ),
-                  Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
-                      child: Text(
-                        L10nApp.accountCreated_6.$,
-                        style: theme.textTheme.titleMedium,
-                      )),
+                  // Padding(
+                  //     padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
+                  //     child: Text(
+                  //       L10nApp.accountCreated_2.$,
+                  //       style: theme.textTheme.titleMedium,
+                  //     )),
+                  // const Padding(
+                  //     padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                  //     child: Text(
+                  //       Constants.LBL_Support_Email,
+                  //       style: TextStyle(
+                  //           fontSize: 22,
+                  //           color: Constants.Sec_Cyan,
+                  //           fontWeight: FontWeight.bold),
+                  //     )),
+                  // Padding(
+                  //     padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
+                  //     child: Text(
+                  //       L10nApp.accountCreated_3.$,
+                  //       style: theme.textTheme.titleMedium,
+                  //     )),
+                  // Padding(
+                  //     padding: const EdgeInsets.fromLTRB(20, 10, 0, 20),
+                  //     child: Text(
+                  //       L10nApp.accountCreated_4.$,
+                  //       style: theme.textTheme.titleMedium,
+                  //     )),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     SizedBox(
+                  //         width: 300,
+                  //         child: Text(
+                  //           L10nApp.accountCreated_5.$,
+                  //           style: const TextStyle(
+                  //               fontSize: 18,
+                  //               color: Constants.Sec_Cyan,
+                  //               fontWeight: FontWeight.bold),
+                  //         )),
+                  //   ],
+                  // ),
+                  // Padding(
+                  //     padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+                  //     child: Text(
+                  //       L10nApp.accountCreated_6.$,
+                  //       style: theme.textTheme.titleMedium,
+                  //     )),
                 ],
               ),
-            if (args?['key'] == Constants.httpForgotUsername)
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Text(
-                      L10nApp.displayUsername.$,
-                      style: theme.textTheme.titleMedium,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      args!['username'],
-                      style: theme.textTheme.titleMedium,
-                    ),
-                  ],
-                ),
-              ),
-            if (args?['key'] == Constants.httpResendVerifyEmail)
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  L10nApp.checkEmail.$,
-                  style: theme.textTheme.titleMedium,
-                ),
-              ),
-            if (args?['key'] == Constants.httpResetPassword)
-              Column(children: <Widget>[
-                Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      L10nApp.passwordSent.$,
-                      style: theme.textTheme.titleMedium,
-                    )),
-                TextFieldComponent(
-                  key: codeKey,
-                  labelText: L10nApp.code.$,
-                  hintText: L10nApp.codeHint.$,
-                  keyboardType: TextInputType.number,
-                ),
-                PasswordField(key: passKey),
-                PasswordField(
-                  key: rePassKey,
-                  labelText: L10nApp.confirmPassword.$,
-                  hintText: L10nApp.confirmPasswordHint.$,
-                ),
-                isLoading
-                    ? const Center(child: CircularProgressIndicator())
-                    : FixButton(
-                        L10nApp.submit.$,
-                        icon: Icons.account_circle,
-                        onPressed: () async {
-                          await onSubmitted(args['username']);
-                        },
-                      )
-              ]),
             Padding(
               padding: const EdgeInsets.all(20),
               child: FixButton(

@@ -114,7 +114,7 @@ class CreateAccountSecurityPage extends BaseWidget {
       final result = await awsCreateUser();
       loadingSpinningWheel(false);
       if (result == Constants.STATUS_SUCCESS) {
-        goNext(Constants.NAV_CONFIRMATION, {'key': Constants.httpCreateUser});
+        goNext(Constants.NAV_CONFIRMATION);
       }
       if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
         showAlert(Constants.ERR_USER_ALREADY_EXISTS);

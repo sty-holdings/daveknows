@@ -68,6 +68,7 @@ class Constants {
   static const LBL_Phone = 'Phone';
   static const LBL_Phone_Number = 'Phone Number';
   static const LBL_Privacy_Policy = 'View Privacy Policy';
+  static const LBL_Profile = 'Profile';
   static const LBL_Security = 'Password & Security';
   static const LBL_Secured = 'Secured:';
   static const LBL_Settings = 'Settings';
@@ -80,7 +81,7 @@ class Constants {
   static const LBL_Telegram = 'Telegram';
   static const LBL_ToDo_list = 'Your To Do List';
   static const LBL_Type = 'Type';
-  static const LBL_Profile = 'Profile';
+  static const LBL_Verification_Email = 'support@sty-holdings.com';
   static const LBL_Version = 'Version:';
   static const LBL_Yes = "Yes";
 

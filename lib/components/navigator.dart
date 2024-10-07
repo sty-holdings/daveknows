@@ -23,7 +23,7 @@ class DKNavigator extends BaseNavigator {
   BaseWidgetState createWidget(RouteSettings settings, Provider provider) {
     switch (settings.name) {
       case Constants.NAV_CONFIRMATION:
-        return ConfirmationPage(provider, settings.arguments);
+        return ConfirmationPage(provider);
       case Constants.NAV_CREATE_ACCOUNT:
         return CreateAccountPage(provider);
       case Constants.NAV_CREATE_ACCOUNT_SECURITY:
