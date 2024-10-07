@@ -1,0 +1,57 @@
+name: daveknows
+description: "Business Insights as Fast as You Can Type!"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2024.2.1+13
+
+environment:
+  sdk: '>=3.2.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dropdown_button2: ^2.3.9
+  framework: ^1.0.3
+  localstorage_light: ^1.0.2
+  amazon_cognito_identity_dart_2: ^3.6.0
+  nats_client: ^2.2.0
+  aws_ssm: ^1.0.2
+  l10n_flutter: ^1.0.7
+  money_formatter: ^0.0.5
+  url_launcher: ^6.2.2
+  shared_preferences: ^2.2.2
+  cupertino_icons: ^1.0.6
+  cached_network_image: ^3.3.1
+  expandable_text: 2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.7
+
+flutter_icons:
+  image_path: assets/icon/Logo-1024-1024.png
+  remove_alpha_ios: false
+  android: true
+  ios: true
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/env/
+    - assets/icon/
+    - assets/images/
+    - assets/l10n/
+    - assets/logos/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf

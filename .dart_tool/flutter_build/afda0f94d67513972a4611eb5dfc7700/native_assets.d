@@ -1,0 +1,1 @@
+ /Users/syacko/workspace/sty-holdings/daveknows/.dart_tool/flutter_build/afda0f94d67513972a4611eb5dfc7700/native_assets.yaml: 

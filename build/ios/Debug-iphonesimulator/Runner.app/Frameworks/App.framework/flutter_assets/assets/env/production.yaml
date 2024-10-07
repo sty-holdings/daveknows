@@ -1,0 +1,10 @@
+httpHost: savup-prod-0200.savup.com:8443
+
+cognito:
+  region: 'us-west-2'
+  userPoolId: 'us-west-2_O2Hw2ClB7'
+  clientId: '2r6huacs76p0r024rq0lcjv1d6'
+  identityPoolId: 'us-west-2:92e7562f-3b7d-4049-b17c-608a3cb29381'  #This is used to get ssm parameters
+
+ssm:
+  names: ['styh-local-nats-host', 'styh-local-nats-prefix', 'styh-local-nats-token']
