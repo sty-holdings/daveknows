@@ -14,7 +14,7 @@ class DKSharedModel extends SharedModel {
   DKSharedModel({required super.navigator, super.theme});
 
   late LocalStorage localStorage;
-  late LoginService loginService;
+  late AWSService loginService;
   late UserProfile profile;
   late bool displaySideNav = true;
   bool skipWelcomePage = false;
@@ -29,7 +29,7 @@ class DKSharedModel extends SharedModel {
 
   void init() async {
     profile = UserProfile();
-    loginService = LoginService();
+    loginService = AWSService();
     localStorage = await LocalStorage.init(Constants.dkLocalStorage);
     skipWelcomePage = localStorage.getItem(Constants.skipWelcomePage) != false;
   }

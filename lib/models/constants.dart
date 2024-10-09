@@ -19,6 +19,8 @@ class Constants {
       'DaveKnows has sent you an email to confirm your account. \nPlease click on the link in the email or click on "Need Help" and "Resend Confirmation".';
   static const ERR_USER_ALREADY_EXISTS =
       'This email already exists. You can reset your password or contact the helpdesk at helpdesk@daveknows.ai.';
+  static const ERR_USER_INVALID_CONFIRMATION_CODE =
+      'The code you enter is invalid. Please try again.';
 
   // AWS - Is an error returned from AWS
   static const AWS_ERR_USER_NOT_CONFIRMED = 'UserNotConfirmedException';
@@ -77,7 +79,8 @@ class Constants {
   static const LBL_Status = 'Status';
   static const LBL_Stripe = 'Stripe';
   static const LBL_System_info = 'System Details';
-  static const LBL_Support_Email = 'helpdesk@daveknows.ai';
+  static const LBL_Support_Email = 'support@sty-holdings.com';
+  static const LBL_Helpdesk_Email = 'helpdesk@daveknows.ai';
   static const LBL_Telegram = 'Telegram';
   static const LBL_ToDo_list = 'Your To Do List';
   static const LBL_Type = 'Type';

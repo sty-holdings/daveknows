@@ -1,7 +1,7 @@
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:daveknows/models/constants.dart';
 
-class LoginService {
+class AWSService {
   late CognitoUser? _cognitoUser;
 
   final CognitoUserPool _userPool = CognitoUserPool(
@@ -62,5 +62,18 @@ class LoginService {
       String username, String confirmationCode, String newPassword) async {
     _cognitoUser = CognitoUser(username, _userPool);
     return _cognitoUser!.confirmPassword(confirmationCode, newPassword);
+  }
+
+  Future<String> submitConfirmationCode(String confirmationCode, String username) async {
+    // Get the user pool user
+    CognitoUser user = CognitoUser(username, _userPool);
+
+    // Confirm the confirmation code
+    try {
+      await user.confirmRegistration(confirmationCode);
+      return Constants.STATUS_SUCCESS;
+    } catch (e) {
+      return e.toString();
+    }
   }
 }

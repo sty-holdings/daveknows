@@ -6,7 +6,6 @@ import 'package:daveknows/components/password_field.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
 import '../components/email_field.dart';
-import 'confirmation.dart';
 
 class CreateAccountSecurityPage extends BaseWidget {
   final formKey = GlobalKey<FormState>();
@@ -115,6 +114,7 @@ class CreateAccountSecurityPage extends BaseWidget {
       loadingSpinningWheel(false);
       if (result == Constants.STATUS_SUCCESS) {
         goNext(Constants.NAV_CONFIRMATION);
+        return;
       }
       if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
         showAlert(Constants.ERR_USER_ALREADY_EXISTS);
