@@ -29,7 +29,7 @@ class ConfirmationPage extends BaseWidget {
                   Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
-                        L10nApp.accountCreated_5.$,
+                        L10nApp.accountCreated_1.$,
                         style: theme.textTheme.titleMedium,
                       )),
                   // Padding(
