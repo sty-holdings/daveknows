@@ -19,7 +19,7 @@ class SplashWidgetState extends State<SplashWidget> {
               height: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage(Constants.INTRO_PATH),
+                  image: const AssetImage(Constants.INTRO_IMAGE_PATH),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.4), BlendMode.darken),
                 ),

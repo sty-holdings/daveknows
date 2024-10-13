@@ -1,12 +1,4 @@
 class DKUserProfile {
-  DKUserProfile._internal();
-
-  static final DKUserProfile _instance = DKUserProfile._instance;
-
-  factory DKUserProfile() {
-    return _instance;
-  }
-
   String _sub = '';
   String _email = ''; //email
   String _firstName = ''; //first_name
@@ -14,13 +6,7 @@ class DKUserProfile {
   String _companyName = ''; //last_name
   String _country = ''; //user_name
 
-  DKUserProfile.fromJson(Map<String, dynamic> json)
-      : _sub = json['sub'],
-        _firstName = json['first_name'],
-        _lastName = json['last_name'],
-        _companyName = json['company_name'],
-        _country = json['country'],
-        _email = json['email'];
+  DKUserProfile();
 
   Map<String, dynamic> toJson() => {
     'sub': _sub,

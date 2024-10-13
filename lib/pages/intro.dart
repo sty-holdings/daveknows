@@ -13,7 +13,7 @@ class IntroPage extends BaseWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Constants.INTRO_PATH),
+            image: AssetImage(Constants.INTRO_IMAGE_PATH),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.white, BlendMode.darken),
           ),

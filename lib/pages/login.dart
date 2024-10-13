@@ -127,7 +127,7 @@ class LoginPage extends BaseWidget {
     if (formKey.currentState!.validate()) {
       loadingSpinningWheel(true);
       try {
-        final session = await DKAWSService()
+        final session = await dkSharedModel.dkAWSService
             .signInUser(getValue(emailKey), getValue(passwordKey));
         if (session == Constants.STATUS_SUCCESS) {
           var userAttributes = DKAWSService().getUserAttributes();
@@ -139,7 +139,6 @@ class LoginPage extends BaseWidget {
           // final params = await ssm.getListParams<String>(
           //     session?.getIdToken().getJwtToken(),
           //     env.names); //['dk-{ENV}-nats-host', 'dk-{ENV}-nats-prefix', 'dk-{ENV}-nats-token', 'dk-{ENV}-pk12']
-
 
           // final ssm = AwsSSM(env.region, env.userPoolId, env.identityPoolId);
           // final params = await ssm.getListParams<String>(
@@ -187,35 +186,35 @@ class LoginPage extends BaseWidget {
     }
   }
 
-  // void fetchBackendInfo() async {
-  //   try {
-  //     final response = await DKService.requestJSON(
-  //         Constants.natsGetBackendInfo, {'email': sharedModel.profile.email});
-  //     //Populate backendSettings
-  //     if (response['data'] != null) {
-  //       sharedModel.backendSettings.authenticatorService =
-  //           response['data']['authenticator_service'];
-  //       sharedModel.backendSettings.baseURL = response['data']['base_URL'];
-  //       sharedModel.backendSettings.debugMode = response['data']['debug_mode'];
-  //       sharedModel.backendSettings.environment =
-  //           response['data']['environment'];
-  //       sharedModel.backendSettings.hostname = response['data']['hostname'];
-  //       sharedModel.backendSettings.logFQN = response['data']['log_fqn'];
-  //       sharedModel.backendSettings.messagePrefix =
-  //           response['data']['message_prefix'];
-  //       sharedModel.backendSettings.pidDirectory =
-  //           response['data']['pid_directory'];
-  //       sharedModel.backendSettings.pidFQN = response['data']['pid_fqn'];
-  //       sharedModel.backendSettings.secured = response['data']['secured'];
-  //       sharedModel.backendSettings.startTime = response['data']['start_time'];
-  //       sharedModel.backendSettings.version = response['data']['version'];
-  //       sharedModel.backendSettings.webAssetURL =
-  //           response['data']['web_asset_url'];
-  //       sharedModel.backendSettings.workingDirectory =
-  //           response['data']['working_directory'];
-  //     }
-  //   } catch (ex) {
-  //     popupError(ex.toString());
-  //   }
-  // }
+// void fetchBackendInfo() async {
+//   try {
+//     final response = await DKService.requestJSON(
+//         Constants.natsGetBackendInfo, {'email': sharedModel.profile.email});
+//     //Populate backendSettings
+//     if (response['data'] != null) {
+//       sharedModel.backendSettings.authenticatorService =
+//           response['data']['authenticator_service'];
+//       sharedModel.backendSettings.baseURL = response['data']['base_URL'];
+//       sharedModel.backendSettings.debugMode = response['data']['debug_mode'];
+//       sharedModel.backendSettings.environment =
+//           response['data']['environment'];
+//       sharedModel.backendSettings.hostname = response['data']['hostname'];
+//       sharedModel.backendSettings.logFQN = response['data']['log_fqn'];
+//       sharedModel.backendSettings.messagePrefix =
+//           response['data']['message_prefix'];
+//       sharedModel.backendSettings.pidDirectory =
+//           response['data']['pid_directory'];
+//       sharedModel.backendSettings.pidFQN = response['data']['pid_fqn'];
+//       sharedModel.backendSettings.secured = response['data']['secured'];
+//       sharedModel.backendSettings.startTime = response['data']['start_time'];
+//       sharedModel.backendSettings.version = response['data']['version'];
+//       sharedModel.backendSettings.webAssetURL =
+//           response['data']['web_asset_url'];
+//       sharedModel.backendSettings.workingDirectory =
+//           response['data']['working_directory'];
+//     }
+//   } catch (ex) {
+//     popupError(ex.toString());
+//   }
+// }
 }

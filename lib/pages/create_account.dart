@@ -5,7 +5,7 @@ import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/components/text_field.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
-import '../models/dk_user_profile.dart';
+import '../models/dk_shared_model.dart';
 
 class CreateAccountPage extends BaseWidget {
   final formKey = GlobalKey<FormState>();
@@ -13,9 +13,7 @@ class CreateAccountPage extends BaseWidget {
   final lastNameKey = GlobalKey<FormFieldState>();
   final companyKey = GlobalKey<FormFieldState>();
 
-  CreateAccountPage(super.provider) : super(isWhitelist: true);
-
-  DKUserProfile dkUserProfile = DKUserProfile();
+  CreateAccountPage(super.scott provider) : super(isWhitelist: true);
 
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {
@@ -104,9 +102,9 @@ class CreateAccountPage extends BaseWidget {
         loadingSpinningWheel(false);
         return;
       }
-      dkUserProfile.firstName =  getValue(firstNameKey);
-      dkUserProfile.lastName = getValue(lastNameKey);
-      dkUserProfile.companyName = getValue(companyKey);
+      dkSharedModel.dkUserProfile.firstName =  getValue(firstNameKey);
+      dkSharedModel.dkUserProfile.lastName = getValue(lastNameKey);
+      dkSharedModel.dkUserProfile.companyName = getValue(companyKey);
       loadingSpinningWheel(false);
       goNext(Constants.NAV_CREATE_ACCOUNT_SECURITY);
     }

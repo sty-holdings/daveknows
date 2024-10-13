@@ -18,9 +18,6 @@ class CreateAccountSecurityPage extends BaseWidget {
 
   CreateAccountSecurityPage(super.provider) : super(isWhitelist: true);
 
-  DKUserProfile dkUserProfile = DKUserProfile();
-  DKAWSService awsService = DKAWSService();
-
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {
     return Form(
@@ -112,8 +109,8 @@ class CreateAccountSecurityPage extends BaseWidget {
         loadingSpinningWheel(false);
         return;
       }
-      dkUserProfile.email =  getValue(emailKey);
-      final result = awsService.signUpUser(username: getValue(emailKey), password: getValue(passwordKey), email: getValue(emailKey), firstName: dkUserProfile.firstName, lastName: dkUserProfile.lastName, companyName: dkUserProfile.companyName);
+      dkSharedModel.dkUserProfile.email =  getValue(emailKey);
+      final result = dkSharedModel.dkAWSService.signUpUser(username: getValue(emailKey), password: getValue(passwordKey), email: getValue(emailKey), firstName: dkSharedModel.dkUserProfile.firstName, lastName: dkSharedModel.dkUserProfile.lastName, companyName: dkSharedModel.dkUserProfile.companyName);
       loadingSpinningWheel(false);
       // if (result == Constants.STATUS_SUCCESS) {
       //   goNext(Constants.NAV_CONFIRMATION);

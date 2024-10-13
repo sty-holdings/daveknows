@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:daveknows/models/dk_user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:framework/base_widget.dart';
 import 'package:daveknows/models/constants.dart';
@@ -23,8 +24,7 @@ abstract class BaseWidget extends BaseWidgetState {
 
   Widget buildUI(BuildContext context, ThemeData theme);
 
-  @override
-  DKSharedModel get sharedModel => provider.sharedModel as DKSharedModel;
+  DKSharedModel get dkSharedModel => provider.sharedModel as DKSharedModel;
 
   void loadingSpinningWheel(bool val, [bool delay = true]) async {
     setState(() {
@@ -70,7 +70,7 @@ abstract class BaseWidget extends BaseWidgetState {
       // Pages without a hamburger menu
       return Scaffold(
         appBar: AppBar(
-            title: const Text(Constants.SLOGAN),
+            title: const Text(Constants.APP_TITLE),
             leading: BackButton(
               onPressed: () =>
               {Navigator.popAndPushNamed(context, Constants.NAV_HOME)},
@@ -82,7 +82,7 @@ abstract class BaseWidget extends BaseWidgetState {
     } else {
       return Scaffold(
         appBar: AppBar(
-            title: const Text(Constants.SLOGAN),
+            title: const Text(Constants.APP_TITLE),
             leading: BackButton(
               onPressed: () =>
               {Navigator.popAndPushNamed(context, Constants.NAV_INTRO)},
@@ -168,8 +168,8 @@ void _popupMessage(String message, Color backgroundColor, bool closeLastPopup,
 
 Future<void> savePreferences() async {
   final prefs = await SharedPreferences.getInstance();
-  prefs.setString('username', sharedModel.savedEmail);
-  prefs.setBool('skipWelcomePage', sharedModel.skipWelcomePage);
+  prefs.setString('username', dkSharedModel.savedEmail);
+  prefs.setBool('skipWelcomePage', dkSharedModel.skipWelcomePage);
 }
 
 // Widget listStatesDropDown() {

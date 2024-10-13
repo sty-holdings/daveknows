@@ -6,10 +6,10 @@ class Environment {
   late AmplifyOutput amplifyOutput;
   List<String> ssmNames;
 
-  static Future<Environment> getEnv(String env) async {
-    final data = await rootBundle.loadString('assets/env/$env.yaml');
+  static Future<Environment> getEnv(String targetEnv) async {
+    final data = await rootBundle.loadString('assets/env/$targetEnv.yaml');
     final yaml = loadYaml(data);
-    return Environment.fromJson(env, yaml);
+    return Environment.fromJson(targetEnv, yaml);
   }
 
   Environment.fromJson(this.name, YamlMap yaml)

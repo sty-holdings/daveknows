@@ -7,12 +7,15 @@ import 'package:daveknows/index.dart';
 import 'environment.dart';
 
 class Constants {
+  //
+  static const APP_TITLE = 'DaveKnows';
+  //
   static late Environment env;
   static const LOCAL_ENV = 'local';
   static const DEVELOPMENT_ENV = 'development';
   static const DEMONSTRATION_ENV = 'demonstration';
   static const PRODUCTION_ENV = 'production';
-
+  //
   // Error Messages
   // App - This is returned to the user
   static const ERR_USER_NOT_CONFIRMED =
@@ -21,16 +24,16 @@ class Constants {
       'This email already exists. You can reset your password or contact the helpdesk at helpdesk@daveknows.ai.';
   static const ERR_USER_INVALID_CONFIRMATION_CODE =
       'The code you enter is invalid. Please try again.';
-
+  //
   // AWS - Is an error returned from AWS
   static const AWS_ERR_USER_NOT_CONFIRMED = 'UserNotConfirmedException';
   static const AWS_ERR_USERNAME_EXISTS = 'UsernameExistsException';
-
+  //
   // Server - is an error returned from the DaveKnows Server or the DaveKnows Http service
   static const DK_ERR_INFORMATION_NOT_FOUND = 'The needed information was not found.';
   static const DK_ERR_REQUESTER_ID_MISSING =
       '[ERROR] The requester id is missing.';
-
+  //
   // labels
   static const LBL_Account_Details = 'Account Details';
   static const LBL_Alert = 'Alert!';
@@ -87,16 +90,16 @@ class Constants {
   static const LBL_Verification_Email = 'support@sty-holdings.com';
   static const LBL_Version = 'Version:';
   static const LBL_Yes = "Yes";
-
+  //
   // Slogans
   static const SLOGAN = 'Marketing Slogan';
-
+  //
   // General
   static const EMPTY = '';
   static const MISSING = 'missing';
   static const TRUE = 'true';
   static const FALSE = 'false';
-
+  //
   // Navigation
   static const NAV_CONFIRMATION = '/confirmation';
   static const NAV_CREATE_ACCOUNT = '/createAccount';
@@ -112,7 +115,7 @@ class Constants {
   static const NAV_USER_PROFILE_ADDRESS = '/userProfileAddress';
   static const NAV_USER_SECURITY = '/userSecurity';
   static const NAV_USER_SETTINGS = '/userSettings';
-
+  //
   // Status
   static const STATUS_COMPLETED = 'COMPLETED';
   static const STATUS_CONFIRMED = 'CONFIRMED';
@@ -122,7 +125,7 @@ class Constants {
   static const STATUS_PENDING = 'PENDING';
   static const STATUS_ACTIVE = 'ACTIVE';
   static const STATUS_INACTIVE = 'INACTIVE';
-
+  //
   // messages
   static const natsCustomerTransfer = 'customerTransfer';
   static const natsGetAllBundles = 'getAllBundles';
@@ -138,22 +141,22 @@ class Constants {
   static const natsPushLinkAndCreateCustomer = 'pushLinkAndCreateCustomer';
   static const natsSetFederalTaxId = 'setFederalTaxId';
   static const natsUpdateUserProfile = 'updateUserProfile';
-
+  //
   // Http messages
   static const httpCreateUser = '/pulluser';
   static const httpForgotUsername = '/forgotusername';
   static const httpResetPassword = '/resetuserpassword';
   static const httpResendVerifyEmail = '/resendverifyemail';
-
+  //
   // Local storage
   static const dkLocalStorage = 'dkLocalStorage';
   static const skipWelcomePage = 'skipWelcomePage';
-
+  //
   //assets
-  static const INTRO_PATH = 'assets/images/intro_page.png';
+  static const INTRO_IMAGE_PATH = 'assets/images/intro_page.png';
   static const NEW_LOGO_PATH = 'assets/images/Logo-100x100.png';
   static const Widget defaultAvatar = Icon(Icons.person, size: 80);
-
+  //
   // Styles
   static const _borderRadius = BorderRadius.all(Radius.circular(8.0));
   static const _borderSide = BorderSide(color: Color(0x8A000000), width: 1);
@@ -164,7 +167,7 @@ class Constants {
   static const linkSide = TextStyle(color: Colors.blue, fontSize: 20);
   static const maxWidth = 450.0;
   static const numberFormat = TextInputType.numberWithOptions(decimal: true);
-
+  //
   static final currency = NumberFormat.currency(
       locale: 'en_US', symbol: currencySymbol, decimalDigits: 2);
   static final percentage =
@@ -177,7 +180,7 @@ class Constants {
   static final filterDigitsOnlyFormat = FilteringTextInputFormatter.digitsOnly;
   static final filterNumberFormat =
       FilteringTextInputFormatter.allow(RegExp('[0-9.,]'));
-
+  //
   // Styles - Light Mode / Dark Mode
   static const LM_borderDecoration = BoxDecoration(
       borderRadius: _borderRadius, border: Border.fromBorderSide(_borderSide));
@@ -195,7 +198,6 @@ class Constants {
       TextStyle(fontSize: 20, color: Constants.Pri_PurpleDeep);
   static const LM_listTileText =
       TextStyle(fontSize: 18, color: Constants.Pri_PurpleDeep);
-
   //
   static const DM_borderDecoration = BoxDecoration(
       borderRadius: _borderRadius, border: Border.fromBorderSide(_borderSide));
@@ -209,26 +211,26 @@ class Constants {
       fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black87);
   static const DM_listTileText =
       TextStyle(fontSize: 18, color: Constants.Pri_PurpleDeep);
-
+  //
   // Colors Usage - Light Mode / Dark Mode
   static const alternativeBackgroundColor = Color(0xFF003E5C);
-
+  //
   // Colors (Primary)
   static const Pri_PurpleDeep = Color(0xFF15092F);
   static const Pri_Gradient_Start = Color(0xFF19FFFD);
   static const Pri_Gradient_End = Color(0xFF9B7FED);
-
+  //
   // Colors (Secondary)
   static const Sec_PurpleSuperDeep = Color(0xFF100725);
   static const Sec_Gray = Color(0xFFE5E5E5);
   static const Sec_Cyan = Color(0xFF14CCCA);
   static const Sec_Purple = Color(0XFF7C65BD);
-
+  //
   // Colors (Accent)
   static const Acc_Purple = Color(0xFF6969FF);
   static const Acc_Yellow = Color(0xFFFFEF2E);
   static const Acc_Green = Color(0xFF00FF91);
-
+  //
   // themes
   static final customTheme = ThemeData(
       useMaterial3: true,
