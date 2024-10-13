@@ -1,9 +1,6 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:nats_client/natslite/constants.dart';
 import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/components/password_field.dart';
-import 'package:daveknows/components/service.dart';
 import 'package:daveknows/models/constants.dart';
 import 'package:daveknows/models/locales.dart';
 import 'package:daveknows/widgets/base_widget.dart';
@@ -35,7 +32,7 @@ class LoginPage extends BaseWidget {
               key: passwordKey,
               focusNode: passFocus,
               onSubmitted: (value) async {
-                final result = await AWSService()
+                final result = await DKAWSService()
                     .signInUser(getValue(emailKey), getValue(passwordKey));
                 // Handle the result
               },
@@ -130,41 +127,55 @@ class LoginPage extends BaseWidget {
     if (formKey.currentState!.validate()) {
       loadingSpinningWheel(true);
       try {
-        final session = await AWSService()
+        final session = await DKAWSService()
             .signInUser(getValue(emailKey), getValue(passwordKey));
-        // final env = Constants.env;
-        // final ssm = AwsSSM(env.region, env.userPoolId, env.identityPoolId);
-        // final params = await ssm.getListParams<String>(
-        //     session?.getIdToken().getJwtToken(), env.names);
-        //
-        // DKService.connect(params, (status, error) async {
-        //   if (error != null) {
-        //     log('NetService:ERROR $error');
-        //     loadingSpinningWheel(false);
-        //   }
-        //   if (status == Status.CONNECT) {
-        //     log('Connected to NATS: $status');
-        //     try {
-        //       final token = session?.getAccessToken().getJwtToken();
-        //       // final response = await DKService.requestJSON(
-        //       //     Constants.natsGetUserProfile, {'requester_id': token});
-        //       sharedModel
-        //           // ..profile = UserProfile.fromJson(response['data'], token)
-        //           .isAuthorized = true;
-        //       sharedModel.savedUserName = getValue(emailKey);
-        //       sharedModel.skipWelcomePage = true;
-        //       sharedModel.profile.genAvatar();
-        //       // sharedModel.toDoList = await fetchToDos();
-        //       // fetchInstitutions(); - No Used at this time. Future Feature
-        //       fetchBackendInfo();
-        //       savePreferences();
-        //       goNext(Constants.NAV_HOME);
-        //     } catch (ex) {
-        //       popupError(sharedModel.getError(ex));
-        //     }
-        //     loadingSpinningWheel(false);
-        //   }
-        // });
+        if (session == Constants.STATUS_SUCCESS) {
+          var userAttributes = DKAWSService().getUserAttributes();
+
+          final env = Constants.env;
+          //
+          // final ssm = AwsSSM(env.region, env.userPoolId, env.identityPoolId);
+          //
+          // final params = await ssm.getListParams<String>(
+          //     session?.getIdToken().getJwtToken(),
+          //     env.names); //['dk-{ENV}-nats-host', 'dk-{ENV}-nats-prefix', 'dk-{ENV}-nats-token', 'dk-{ENV}-pk12']
+
+
+          // final ssm = AwsSSM(env.region, env.userPoolId, env.identityPoolId);
+          // final params = await ssm.getListParams<String>(
+          //     session?.getIdToken().getJwtToken(), env.names);
+          //
+          // DKService.connect(params, (status, error) async {
+          //   if (error != null) {
+          //     log('NetService:ERROR $error');
+          //     loadingSpinningWheel(false);
+          //   }
+          //   if (status == Status.CONNECT) {
+          //     log('Connected to NATS: $status');
+          //     try {
+          //       final token = session?.getAccessToken().getJwtToken();
+          //       // final response = await DKService.requestJSON(
+          //       //     Constants.natsGetUserProfile, {'requester_id': token});
+          //       sharedModel
+          //           ..profile.setEmail = 'email';+
+          //           .isAuthorized = true) as String?;
+          //       sharedModel.savedUserName = getValue(emailKey);
+          //       sharedModel.skipWelcomePage = true;
+          //       sharedModel.profile.genAvatar();
+          //       // sharedModel.toDoList = await fetchToDos();
+          //       // fetchInstitutions(); - No Used at this time. Future Feature
+          //       fetchBackendInfo();
+          //       savePreferences();
+          //       goNext(Constants.NAV_HOME);
+          //     } catch (ex) {
+          //       popupError(sharedModel.getError(ex));
+          //     }
+          //     loadingSpinningWheel(false);
+          //   }
+          // });
+        } else {
+          showAlert('Incorrect username or password!');
+        }
       } catch (ex) {
         if (ex.toString().contains(Constants.AWS_ERR_USER_NOT_CONFIRMED)) {
           popupError(Constants.ERR_USER_NOT_CONFIRMED);
@@ -176,35 +187,35 @@ class LoginPage extends BaseWidget {
     }
   }
 
-  void fetchBackendInfo() async {
-    try {
-      final response = await DKService.requestJSON(
-          Constants.natsGetBackendInfo, {'email': sharedModel.profile.email});
-      //Populate backendSettings
-      if (response['data'] != null) {
-        sharedModel.backendSettings.authenticatorService =
-            response['data']['authenticator_service'];
-        sharedModel.backendSettings.baseURL = response['data']['base_URL'];
-        sharedModel.backendSettings.debugMode = response['data']['debug_mode'];
-        sharedModel.backendSettings.environment =
-            response['data']['environment'];
-        sharedModel.backendSettings.hostname = response['data']['hostname'];
-        sharedModel.backendSettings.logFQN = response['data']['log_fqn'];
-        sharedModel.backendSettings.messagePrefix =
-            response['data']['message_prefix'];
-        sharedModel.backendSettings.pidDirectory =
-            response['data']['pid_directory'];
-        sharedModel.backendSettings.pidFQN = response['data']['pid_fqn'];
-        sharedModel.backendSettings.secured = response['data']['secured'];
-        sharedModel.backendSettings.startTime = response['data']['start_time'];
-        sharedModel.backendSettings.version = response['data']['version'];
-        sharedModel.backendSettings.webAssetURL =
-            response['data']['web_asset_url'];
-        sharedModel.backendSettings.workingDirectory =
-            response['data']['working_directory'];
-      }
-    } catch (ex) {
-      popupError(ex.toString());
-    }
-  }
+  // void fetchBackendInfo() async {
+  //   try {
+  //     final response = await DKService.requestJSON(
+  //         Constants.natsGetBackendInfo, {'email': sharedModel.profile.email});
+  //     //Populate backendSettings
+  //     if (response['data'] != null) {
+  //       sharedModel.backendSettings.authenticatorService =
+  //           response['data']['authenticator_service'];
+  //       sharedModel.backendSettings.baseURL = response['data']['base_URL'];
+  //       sharedModel.backendSettings.debugMode = response['data']['debug_mode'];
+  //       sharedModel.backendSettings.environment =
+  //           response['data']['environment'];
+  //       sharedModel.backendSettings.hostname = response['data']['hostname'];
+  //       sharedModel.backendSettings.logFQN = response['data']['log_fqn'];
+  //       sharedModel.backendSettings.messagePrefix =
+  //           response['data']['message_prefix'];
+  //       sharedModel.backendSettings.pidDirectory =
+  //           response['data']['pid_directory'];
+  //       sharedModel.backendSettings.pidFQN = response['data']['pid_fqn'];
+  //       sharedModel.backendSettings.secured = response['data']['secured'];
+  //       sharedModel.backendSettings.startTime = response['data']['start_time'];
+  //       sharedModel.backendSettings.version = response['data']['version'];
+  //       sharedModel.backendSettings.webAssetURL =
+  //           response['data']['web_asset_url'];
+  //       sharedModel.backendSettings.workingDirectory =
+  //           response['data']['working_directory'];
+  //     }
+  //   } catch (ex) {
+  //     popupError(ex.toString());
+  //   }
+  // }
 }

@@ -5,6 +5,8 @@ import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/components/text_field.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
+import '../models/dk_user_profile.dart';
+
 class CreateAccountPage extends BaseWidget {
   final formKey = GlobalKey<FormState>();
   final firstNameKey = GlobalKey<FormFieldState>();
@@ -12,6 +14,8 @@ class CreateAccountPage extends BaseWidget {
   final companyKey = GlobalKey<FormFieldState>();
 
   CreateAccountPage(super.provider) : super(isWhitelist: true);
+
+  DKUserProfile dkUserProfile = DKUserProfile();
 
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {
@@ -23,7 +27,7 @@ class CreateAccountPage extends BaseWidget {
               Padding(
                   padding: const EdgeInsets.all(8),
                   child: Text(
-                    L10nApp.createAccountHeader_1.$,
+                    L10nApp.marketingSlogan.$,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 22, color: Constants.Sec_Cyan, fontWeight: FontWeight.bold),
                   )),
@@ -100,11 +104,11 @@ class CreateAccountPage extends BaseWidget {
         loadingSpinningWheel(false);
         return;
       }
-      setFirstName(getValue(firstNameKey));
-      setLastName(getValue(lastNameKey));
-      setCompanyName(getValue(companyKey));
+      dkUserProfile.firstName =  getValue(firstNameKey);
+      dkUserProfile.lastName = getValue(lastNameKey);
+      dkUserProfile.companyName = getValue(companyKey);
       loadingSpinningWheel(false);
-      goNext(Constants.NAV_CREATE_ACCOUNT_SECURITY, {'key': Constants.httpCreateUser});
+      goNext(Constants.NAV_CREATE_ACCOUNT_SECURITY);
     }
   }
 }

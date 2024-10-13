@@ -5,7 +5,9 @@ import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/components/password_field.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
+import '../components/dk_aws_service.dart';
 import '../components/email_field.dart';
+import '../models/dk_user_profile.dart';
 
 class CreateAccountSecurityPage extends BaseWidget {
   final formKey = GlobalKey<FormState>();
@@ -15,6 +17,9 @@ class CreateAccountSecurityPage extends BaseWidget {
   final stateKey = GlobalKey<FormFieldState>();
 
   CreateAccountSecurityPage(super.provider) : super(isWhitelist: true);
+
+  DKUserProfile dkUserProfile = DKUserProfile();
+  DKAWSService awsService = DKAWSService();
 
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {
@@ -68,7 +73,7 @@ class CreateAccountSecurityPage extends BaseWidget {
     widgets.add(Padding(
         padding: const EdgeInsets.all(8),
         child: Text(
-          L10nApp.createAccountHeader_1.$,
+          L10nApp.marketingSlogan.$,
           textAlign: TextAlign.center,
           style: const TextStyle(
               fontSize: 22,
@@ -107,20 +112,18 @@ class CreateAccountSecurityPage extends BaseWidget {
         loadingSpinningWheel(false);
         return;
       }
-      setUserName(getValue(emailKey));
-      setEmail(getValue(emailKey));
-      setPassword(getValue(passwordKey));
-      final result = await awsCreateUser();
+      dkUserProfile.email =  getValue(emailKey);
+      final result = awsService.signUpUser(username: getValue(emailKey), password: getValue(passwordKey), email: getValue(emailKey), firstName: dkUserProfile.firstName, lastName: dkUserProfile.lastName, companyName: dkUserProfile.companyName);
       loadingSpinningWheel(false);
-      if (result == Constants.STATUS_SUCCESS) {
-        goNext(Constants.NAV_CONFIRMATION);
-        return;
-      }
-      if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
-        showAlert(Constants.ERR_USER_ALREADY_EXISTS);
-        return;
-      }
-      showAlert(result);
+      // if (result == Constants.STATUS_SUCCESS) {
+      //   goNext(Constants.NAV_CONFIRMATION);
+      //   return;
+      // }
+      // if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
+      //   showAlert(Constants.ERR_USER_ALREADY_EXISTS);
+      //   return;
+      // }
+      // showAlert(result);
     }
   }
 }

@@ -1,49 +1,76 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:daveknows/index.dart';
+import 'package:daveknows/widgets/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:framework/base_app.dart';
 import 'package:framework/provider.dart';
-import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/models/constants.dart';
 import 'package:daveknows/models/environment.dart';
 import 'package:daveknows/models/locales.dart';
-import 'package:daveknows/models/shared_model.dart';
+import 'package:daveknows/models/dk_shared_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'components/dk_aws_service.dart';
+import 'components/fix_button.dart';
 import 'components/navigator.dart';
-import 'widgets/splash.dart';
 
-Future<void> main() async {
-
-  const targetEnv = String.fromEnvironment('env', defaultValue: Constants.LOCAL_ENV);
+void main() async {
+  const targetEnv =
+      String.fromEnvironment('env', defaultValue: Constants.LOCAL_ENV);
   // const targetEnv = String.fromEnvironment('env', defaultValue: Constants.DEVELOPMENT_ENV);
   // const targetEnv = String.fromEnvironment('env', defaultValue: Constants.DEMONSTRATION_ENV);
   // const targetEnv = String.fromEnvironment('env', defaultValue: Constants.PRODUCTION_ENV);
+  try {
+    WidgetsFlutterBinding.ensureInitialized();
+    await downloadAssetsAndData(targetEnv);
+    await _configureAmplify();
+    runApp(MyApp(targetEnv: targetEnv).createApp());
+  } on AmplifyException catch (e) {
+    runApp(Text("Error configuring Amplify: ${e.message}"));
+  }
+}
 
-  runApp(MyApp(targetEnv:  targetEnv).createApp());
+Future<void> downloadAssetsAndData(String targetEnv) async {
+  var env = String.fromEnvironment('env', defaultValue: targetEnv);
+  Constants.env = await Environment.getEnv(env);
+}
+
+Future<void> _configureAmplify() async {
+  String amplifyOutput = '';
+  try {
+    amplifyOutput = jsonEncode(Constants.env.amplifyOutput);
+  } catch (e) {
+    log(e.toString());
+  }
+  try {
+    await Amplify.addPlugins([AmplifyAuthCognito()]);
+    await Amplify.configure(amplifyOutput);
+    log('Amplify successfully configured');
+  } on Exception catch (e) {
+    log('Error configuring Amplify: $e');
+  }
 }
 
 class MyApp extends BaseAppState {
-  MyApp({required String targetEnv}) : super(DKSharedModel(navigator: DKNavigator(), theme: Constants.customTheme));
-  var targetEnv = 'local';
+  MyApp({required String targetEnv})
+      : super(DKSharedModel(
+            navigator: DKNavigator(), theme: Constants.customTheme));
 
-  Future<void> downloadAssetsAndData() async {
-    var env = String.fromEnvironment('env', defaultValue: targetEnv);
-    final yaml = await Environment.getEnv(env);
-    Constants.env = Environment.fromJson(env, yaml);
-    await Constants.env.loadCertificate(yaml);
-    (sharedModel as DKSharedModel).init();
-    _loadPreferences();
-  }
+  DKAWSService dkAWSService = DKAWSService();
 
   Future<void> _loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
-    final username = prefs.getString('username');
+    final email = prefs.getString('email');
     final skipWelcomePage = prefs.getBool('skipWelcomePage') ?? false;
-    (sharedModel as DKSharedModel).savedUserName = username ?? '';
-    (sharedModel as DKSharedModel).skipWelcomePage = skipWelcomePage;
+    (sharedModel as DKSharedModel).savedEmail =
+        email ?? ''; // prefs are saved in the sharedModel so they are global
+    (sharedModel as DKSharedModel).skipWelcomePage =
+        skipWelcomePage; // prefs are saved in the sharedModel so they are global
   }
 
   late FutureBuilder<dynamic>? _futurePage;
@@ -52,7 +79,7 @@ class MyApp extends BaseAppState {
   void initState() {
     super.initState();
     _futurePage = FutureBuilder<dynamic>(
-      future: downloadAssetsAndData(),
+      future: _loadPreferences(),
       builder: (ctx, snapshot) {
         if (snapshot.hasError) {
           log('snapshot error: ${snapshot.error}');
@@ -60,12 +87,12 @@ class MyApp extends BaseAppState {
             body: Center(
               child: sharedModel.isAuthorized
                   ? FixButton(
-                      L10nApp.logout.$,
-                      icon: Icons.lock_open_outlined,
-                      onPressed: () {
-                        (sharedModel as DKSharedModel).loginService.logout().whenComplete(() => goNext(ctx, Constants.NAV_LOGIN));
-                      },
-                    )
+                L10nApp.logout.$,
+                icon: Icons.lock_open_outlined,
+                onPressed: () {
+                  dkAWSService.signOutCurrentUser().whenComplete(() => goNext(ctx, Constants.NAV_LOGIN));
+                },
+              )
                   : Text(snapshot.error.toString(), textAlign: TextAlign.center, style: const TextStyle(color: Colors.red)),
             ),
           );

@@ -86,17 +86,17 @@ class ConfirmationPage extends BaseWidget {
     if (formKey.currentState!.validate()) {
       loadingSpinningWheel(true);
       try {
-          final result = await sharedModel.loginService.submitConfirmationCode(getValue(codeKey), getEmail());
-          if (result == Constants.STATUS_SUCCESS) {
-            goNext(Constants.NAV_LOGIN);
-            loadingSpinningWheel(false);
-            return;
-          } else {
-            showAlert(Constants.ERR_USER_INVALID_CONFIRMATION_CODE);
-          }
+          // final result = await sharedModel.loginService.submitConfirmationCode(getValue(codeKey), getEmail());
+          // if (result == Constants.STATUS_SUCCESS) {
+          //   goNext(Constants.NAV_LOGIN);
+          //   loadingSpinningWheel(false);
+          //   return;
+          // } else {
+          //   showAlert(Constants.ERR_USER_INVALID_CONFIRMATION_CODE);
+          // }
       } catch (ex) {
         log(ex.toString());
-        popupError(sharedModel.getError(ex));
+        // popupError(sharedModel.getError(ex));
       }
       loadingSpinningWheel(false);
     }

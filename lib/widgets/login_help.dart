@@ -71,7 +71,7 @@ class LoginHelpWidget extends BaseWidget {
           goNext(Constants.NAV_CONFIRMATION, {'key': apiName, 'email': getValue(emailKey)});
         }
       } catch (ex) {
-        popupError(sharedModel.getError(ex));
+        // popupError(sharedModel.getError(ex));
       }
       loadingSpinningWheel(false);
     }

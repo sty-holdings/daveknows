@@ -1,7 +1,5 @@
 // import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 // import 'package:daveknows/models/constants.dart';
-// import 'package:amplify_core/amplify_core.dart';
-// import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 //
 // class AWSService {
 //   late CognitoUser? _cognitoUser;
