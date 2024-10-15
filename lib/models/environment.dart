@@ -6,13 +6,13 @@ class Environment {
   late AmplifyOutput amplifyOutput;
   List<String> ssmNames;
 
-  static Future<Environment> getEnv(String targetEnv) async {
+  static Future<dynamic> getEnv(String targetEnv) async {
     final data = await rootBundle.loadString('assets/env/$targetEnv.yaml');
     final yaml = loadYaml(data);
-    return Environment.fromJson(targetEnv, yaml);
+    return Environment.fromJson(yaml);
   }
 
-  Environment.fromJson(this.name, YamlMap yaml)
+  Environment.fromJson(YamlMap yaml)
       : amplifyOutput = AmplifyOutput.fromJson(yaml['amplify-output']),
         ssmNames = List<String>.from(yaml['ssm_names']);
 
@@ -22,6 +22,11 @@ class Environment {
       'amplify-output': amplifyOutput.toJson(),
       'ssm_names': ssmNames,
     };
+  }
+
+  @override
+  String toString() {
+    return 'Environment(name: $name, amplifyOutput: $amplifyOutput.toString(), ssmNames: $ssmNames)';
   }
 }
 
@@ -38,6 +43,11 @@ class AmplifyOutput {
       'version': version,
       'auth': auth.toJson(),
     };
+  }
+
+  @override
+  String toString() {
+    return 'amplifyOutput(version: $version, auth: $auth.toString())';
   }
 }
 
@@ -86,6 +96,11 @@ class Auth {
       'unauthenticated_identities_enabled': unauthenticatedIdentitiesEnabled,
     };
   }
+
+  @override
+  String toString() {
+    return 'Auth(userPoolId: $userPoolId, awsRegion: $awsRegion, userPoolClientId: $userPoolClientId, identityPoolId: $identityPoolId, mfaMethods: $mfaMethods, standardRequiredAttributes: $standardRequiredAttributes, usernameAttributes: $usernameAttributes, userVerificationTypes: $userVerificationTypes, mfaConfiguration: $mfaConfiguration, passwordPolicy: ${passwordPolicy.toString()}, unauthenticatedIdentitiesEnabled: $unauthenticatedIdentitiesEnabled)';
+  }
 }
 
 class PasswordPolicy {
@@ -110,5 +125,10 @@ class PasswordPolicy {
       'require_symbols': requireSymbols,
       'require_uppercase': requireUppercase,
     };
+  }
+
+  @override
+  String toString() {
+    return 'PasswordPolicy(minLength: $minLength, requireLowercase: $requireLowercase, requireNumbers: $requireNumbers, requireSymbols: $requireSymbols, requireUppercase: $requireUppercase)';
   }
 }

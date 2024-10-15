@@ -5,7 +5,7 @@ import 'package:daveknows/models/constants.dart';
 import 'package:daveknows/models/locales.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
-import 'package:daveknows/components/dk_aws_service.dart';
+import 'package:daveknows/components/DKAWService.dart';
 import 'package:daveknows/components/email_field.dart';
 
 class LoginPage extends BaseWidget {

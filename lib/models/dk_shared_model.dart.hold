@@ -1,4 +1,4 @@
-import 'package:daveknows/components/DKAWService.dart';
+import 'package:daveknows/components/dk_aws_service.dart';
 import 'package:daveknows/components/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:framework/shared_model.dart';

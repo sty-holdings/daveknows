@@ -121,6 +121,7 @@ class Constants {
   static const STATUS_CONFIRMED = 'CONFIRMED';
   static const STATUS_FAILED = 'FAILED';
   static const STATUS_LINKED = 'LINKED';
+  static const STATUS_LOADING = 'LOADING';
   static const STATUS_SUCCESS = 'SUCCESS';
   static const STATUS_PENDING = 'PENDING';
   static const STATUS_ACTIVE = 'ACTIVE';
@@ -154,7 +155,7 @@ class Constants {
   //
   //assets
   static const INTRO_IMAGE_PATH = 'assets/images/intro_page.png';
-  static const NEW_LOGO_PATH = 'assets/images/Logo-100x100.png';
+  static const LOGO_PATH = 'assets/logos/Logo-100x100.png';
   static const Widget defaultAvatar = Icon(Icons.person, size: 80);
   //
   // Styles

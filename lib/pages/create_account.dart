@@ -13,7 +13,7 @@ class CreateAccountPage extends BaseWidget {
   final lastNameKey = GlobalKey<FormFieldState>();
   final companyKey = GlobalKey<FormFieldState>();
 
-  CreateAccountPage(super.scott provider) : super(isWhitelist: true);
+  CreateAccountPage(super.provider) : super(isWhitelist: true);
 
   @override
   Widget buildUI(BuildContext context, ThemeData theme) {

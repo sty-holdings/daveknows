@@ -28,8 +28,8 @@ class DKNavigator extends BaseNavigator {
         return CreateAccountSecurityPage(provider);
       case Constants.NAV_LOGIN_HELP:
         return LoginHelpWidget(provider);
-      case Constants.NAV_HOME:
-        return HomePage(provider, _userProfile);
+      // case Constants.NAV_HOME:
+      //   return HomePage(provider, _userProfile);
       case Constants.NAV_INTRO:
         return IntroPage(provider);
       case Constants.NAV_LOGIN:

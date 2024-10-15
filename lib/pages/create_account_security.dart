@@ -5,7 +5,7 @@ import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/components/password_field.dart';
 import 'package:daveknows/widgets/base_widget.dart';
 
-import '../components/dk_aws_service.dart';
+import '../components/DKAWService.dart';
 import '../components/email_field.dart';
 import '../models/dk_user_profile.dart';
 
@@ -112,15 +112,15 @@ class CreateAccountSecurityPage extends BaseWidget {
       dkSharedModel.dkUserProfile.email =  getValue(emailKey);
       final result = dkSharedModel.dkAWSService.signUpUser(username: getValue(emailKey), password: getValue(passwordKey), email: getValue(emailKey), firstName: dkSharedModel.dkUserProfile.firstName, lastName: dkSharedModel.dkUserProfile.lastName, companyName: dkSharedModel.dkUserProfile.companyName);
       loadingSpinningWheel(false);
-      // if (result == Constants.STATUS_SUCCESS) {
-      //   goNext(Constants.NAV_CONFIRMATION);
-      //   return;
-      // }
-      // if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
-      //   showAlert(Constants.ERR_USER_ALREADY_EXISTS);
-      //   return;
-      // }
-      // showAlert(result);
+      if (result == Constants.STATUS_SUCCESS) {
+        goNext(Constants.NAV_CONFIRMATION);
+        return;
+      }
+      if (result == Constants.AWS_ERR_USERNAME_EXISTS) {
+        showAlert(Constants.ERR_USER_ALREADY_EXISTS);
+        return;
+      }
+      showAlert(result as String);
     }
   }
 }
