@@ -6,3 +6,5 @@ build/
 /.dart_tool/dartpad/
 /.dart_tool/flutter_build/
 /.dart_tool/pub/
+/.flutter-plugins
+/.flutter-plugins-dependencies

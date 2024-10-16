@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "684060832079",
+    "project_id": "sty-holdings",
+    "storage_bucket": "sty-holdings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684060832079:android:29a83348b58a0d79ec553a",
+        "android_client_info": {
+          "package_name": "com.styholdings.chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAUbobaiOSChEHm3FEo2mV_ZbN5eh46c4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

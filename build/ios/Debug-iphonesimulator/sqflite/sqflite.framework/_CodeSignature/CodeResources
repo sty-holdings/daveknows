@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SqfliteCursor.h</key>
 		<data>
-		k3GFwG5y7IbCdwE6sxt6NKWQ+Og=
+		1VfHOrPgffaqn8JEKrOhk6rgPKE=
 		</data>
 		<key>Headers/SqfliteDarwinDB.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/SqfliteDatabase.h</key>
 		<data>
-		pqot2HqmOkS5bMy/liNxH6shMkE=
+		zsTTAloFlEcTIE9lsLs7YH3mft8=
 		</data>
 		<key>Headers/SqfliteImport.h</key>
 		<data>
@@ -42,19 +42,19 @@
 		</data>
 		<key>Headers/SqfliteOperation.h</key>
 		<data>
-		VhCT8s5jD4wMLoOQTEEpTg14x5A=
+		UtW3GOBeXEW5s2w3h3qZBrV/smQ=
 		</data>
 		<key>Headers/SqflitePlugin.h</key>
 		<data>
-		ZoFoyxElqhA1M65deTpg5gvnRRU=
+		sJ7X/5qy1I/xWzYWbIH4QQlg5yA=
 		</data>
 		<key>Headers/sqflite-umbrella.h</key>
 		<data>
-		V3JmRu/SM3wB798x48n+epgVbro=
+		0ZAjEchHuptdKCLS4EOvUKhkIIY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		v2zRTK47OM2NEKW7mvJoYXnYpZY=
+		bFHtCADu7d1wsACiJ19eJ0nbZTo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -73,13 +73,21 @@
 	<dict>
 		<key>Headers/SqfliteCursor.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			1VfHOrPgffaqn8JEKrOhk6rgPKE=
+			</data>
 			<key>hash2</key>
 			<data>
-			WWFrQrfKjFzZjUugytYb3sQo+3zIKOPLCOopyJek4HQ=
+			mG1Yvnp0qIvnF4VCIygh3mQKBibOVuxB1DyZsGoN4is=
 			</data>
 		</dict>
 		<key>Headers/SqfliteDarwinDB.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			tZyArHKRL8piDxk7EH3P7NnqeqY=
+			</data>
 			<key>hash2</key>
 			<data>
 			4o6AqGEvmGmfaf3cFXQdHF3sAWYKWTGRjQYgtMC7i0A=
@@ -87,6 +95,10 @@
 		</dict>
 		<key>Headers/SqfliteDarwinDatabase.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			7ClQ9y+bJDwW+9cFUBVbieNYGtk=
+			</data>
 			<key>hash2</key>
 			<data>
 			+qgtnfYDdcmPK1oBSELpS4GCdXbLQHUlWuQ8kS0t/EU=
@@ -94,6 +106,10 @@
 		</dict>
 		<key>Headers/SqfliteDarwinDatabaseAdditions.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			imHAEfglYW5migRW3xAlqArRWaQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			7CShufEeDPE+Y3rzM2TR5Bd6N9RAChJEQtNavI0fFsE=
@@ -101,6 +117,10 @@
 		</dict>
 		<key>Headers/SqfliteDarwinDatabaseQueue.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			nIEGGdMFXbpupge/mFSQAOunwvM=
+			</data>
 			<key>hash2</key>
 			<data>
 			QoZKBu8eqCcQwTJj0LhWByVuDxSNOVdTum9l9tJ6AbY=
@@ -108,6 +128,10 @@
 		</dict>
 		<key>Headers/SqfliteDarwinImport.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Wo5oLPP0GkqPc1Xa4KgWxvuMKM4=
+			</data>
 			<key>hash2</key>
 			<data>
 			WEXp8hJlV9qRmdXKcW5rVx72oxqn7YX70vNCC0rR6sg=
@@ -115,6 +139,10 @@
 		</dict>
 		<key>Headers/SqfliteDarwinResultSet.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			hdp5PUytnouA28t59mZqR++ynn8=
+			</data>
 			<key>hash2</key>
 			<data>
 			AJ2n8lXjqauoqpv0QKc4Nc9waqvT0wkIvU/bwMiwDcs=
@@ -122,13 +150,21 @@
 		</dict>
 		<key>Headers/SqfliteDatabase.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			zsTTAloFlEcTIE9lsLs7YH3mft8=
+			</data>
 			<key>hash2</key>
 			<data>
-			fPgDuKcl4tj0BnmfkUJZELgPMhGjntYuVnUe7m7KsI8=
+			3kOKoA86HUGYZZRrMFzp7zMUMD/dy6p48Hdq6/PHp4w=
 			</data>
 		</dict>
 		<key>Headers/SqfliteImport.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			5EnSTmDeeuQ5qy+JW9INmT6Prc0=
+			</data>
 			<key>hash2</key>
 			<data>
 			YhqPybsZhbZmSiHSVkDiRhEMWbs+8kn1GXXHPaYDI3w=
@@ -136,27 +172,43 @@
 		</dict>
 		<key>Headers/SqfliteOperation.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			UtW3GOBeXEW5s2w3h3qZBrV/smQ=
+			</data>
 			<key>hash2</key>
 			<data>
-			2XK0OE5tywSE7QpIJzXH3a/K+zXjPoZ8CX7UBPAMGd8=
+			IM02aeCQhobAX0xcbqDY2W0zuBJ6Ru77D/eIDaZsrNs=
 			</data>
 		</dict>
 		<key>Headers/SqflitePlugin.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			sJ7X/5qy1I/xWzYWbIH4QQlg5yA=
+			</data>
 			<key>hash2</key>
 			<data>
-			tG3sTwo9OIE6Izwo/ZppYZ0DVN9HW1Z5VkU7d7qhxvc=
+			SvlNMUtndz+TOE9eWj4+mgG8hHNLoS+CKmeBUKFV7cA=
 			</data>
 		</dict>
 		<key>Headers/sqflite-umbrella.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			0ZAjEchHuptdKCLS4EOvUKhkIIY=
+			</data>
 			<key>hash2</key>
 			<data>
-			BSdWSXjqOl12OziqqLNi9804E6wtL7zo4mIYtVVvrHE=
+			6tUnqMjmSvmu7RM3OORjcQO4g7An+vS62vOVpiC11Ag=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			F7MvTB7XfsuHpBENN/M7Y2zXO3o=
+			</data>
 			<key>hash2</key>
 			<data>
 			eEumEfhgIg+GvWnOVvd3J3xG3anuAKsIwoWGcWxjN28=
@@ -164,6 +216,10 @@
 		</dict>
 		<key>sqflite_darwin_privacy.bundle/Info.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			RnSDZafBaRTf9nq2y3JtBBeJMBQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			EEJRWBDZy/OUgoKfibeMFywgh/QN7kCc6yJ5FkU9pQ0=
@@ -171,6 +227,10 @@
 		</dict>
 		<key>sqflite_darwin_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			YIiJ5tHvqBeSpBm2mcfVZdaGz3E=
+			</data>
 			<key>hash2</key>
 			<data>
 			RyJqKWCN8gatChEOav61p3/1dawd+cdr/bLW37P6/tE=
