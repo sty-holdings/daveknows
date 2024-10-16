@@ -50,7 +50,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                 'https://firebasestorage.googleapis.com/v0/b/sty-holdings.appspot.com/o/backgrounds%2Fdaveknows%2Fbrandbook-41.png?alt=media&token=7d62d03d-e30b-4b43-af32-1ae2671a66bd',
               ).image,
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(0.0),
