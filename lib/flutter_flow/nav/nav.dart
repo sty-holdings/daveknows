@@ -79,28 +79,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? LoginPageWidget() : IntroPage(),
+          appStateNotifier.loggedIn ? const LoginPageWidget() : const IntroPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? LoginPageWidget() : IntroPage(),
+              appStateNotifier.loggedIn ? const LoginPageWidget() : const IntroPage(),
         ),
         FFRoute(
           name: 'IntroPage',
           path: '/introPage',
-          builder: (context, params) => IntroPage(),
+          builder: (context, params) => const IntroPage(),
         ),
         FFRoute(
           name: 'LoginPage',
           path: '/loginPage',
-          builder: (context, params) => LoginPageWidget(),
+          builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'CreateAccountPage',
           path: '/createAccountPage',
-          builder: (context, params) => CreateAccountPageWidget(),
+          builder: (context, params) => const CreateAccountPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
