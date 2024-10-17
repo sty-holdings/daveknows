@@ -1,5 +1,6 @@
-name: DaveKnows
-description: DaveKnows app powered by STY Holdings Inc
+name: chat
+description: A new Flutter project.
+
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -55,8 +56,8 @@ dependencies:
   url_launcher_android: 6.3.4
   url_launcher_ios: 6.3.1
   url_launcher_platform_interface: 2.3.2
-
   cupertino_icons: ^1.0.0
+  yaml: ^3.1.0
 
 dependency_overrides:
   http: 1.2.1

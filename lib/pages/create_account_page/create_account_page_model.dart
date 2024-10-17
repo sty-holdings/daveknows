@@ -1,6 +1,6 @@
-import '/flutter_flow/styh_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/model/styh_theme.dart';
+import '/model/flutter_flow_util.dart';
+import '/model/flutter_flow_widgets.dart';
 import 'create_account_page_widget.dart' show CreateAccountPageWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';

@@ -1,6 +1,6 @@
-import '/flutter_flow/styh_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/model/styh_theme.dart';
+import '/model/flutter_flow_util.dart';
+import '/model/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +39,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: STYHTheme.of(context).secondaryBackground,
+        // backgroundColor: STYHTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -51,7 +51,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   width: 100.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: STYHTheme.of(context).secondaryBackground,
+                    // color: STYHTheme.of(context).secondaryBackground,
                   ),
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -68,8 +68,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               maxWidth: 602.0,
                             ),
                             decoration: BoxDecoration(
-                              color: STYHTheme.of(context)
-                                  .secondaryBackground,
+                              // color: STYHTheme.of(context)
+                              //     .secondaryBackground,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(16.0),
                                 bottomRight: Radius.circular(16.0),
@@ -90,12 +90,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'brand.ai',
-                                      style: STYHTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily: 'Inter Tight',
-                                            letterSpacing: 0.0,
-                                          ),
+                                      // style: STYHTheme.of(context)
+                                      //     .headlineMedium
+                                      //     .override(
+                                      //       fontFamily: 'Inter Tight',
+                                      //       letterSpacing: 0.0,
+                                      //     ),
                                     ),
                                   ),
                                 ],
@@ -110,8 +110,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             maxWidth: 602.0,
                           ),
                           decoration: BoxDecoration(
-                            color: STYHTheme.of(context)
-                                .secondaryBackground,
+                            // color: STYHTheme.of(context)
+                            //     .secondaryBackground,
                           ),
                         ),
                       ],
@@ -130,7 +130,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     width: 100.0,
                     height: double.infinity,
                     decoration: BoxDecoration(
-                      color: STYHTheme.of(context).secondaryBackground,
+                      // color: STYHTheme.of(context).secondaryBackground,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(

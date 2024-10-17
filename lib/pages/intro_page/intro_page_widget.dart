@@ -1,6 +1,6 @@
-import '/flutter_flow/styh_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/model/styh_theme.dart';
+import '/model/flutter_flow_util.dart';
+import '/model/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -38,12 +38,12 @@ class _IntroPageState extends State<IntroPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: STYHTheme.of(context).primaryBackground,
+        // backgroundColor: STYHTheme.of(context).primaryBackground,
         body: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.052,
           decoration: BoxDecoration(
-            color: STYHTheme.of(context).secondaryBackground,
+            // color: STYHTheme.of(context).secondaryBackground,
             image: DecorationImage(
               fit: BoxFit.cover,
               image: Image.network(
@@ -64,14 +64,14 @@ class _IntroPageState extends State<IntroPage> {
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  // color: STYHTheme.of(context).secondaryBackground,
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  // color: STYHTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(24.0),
@@ -83,21 +83,21 @@ class _IntroPageState extends State<IntroPage> {
                         child: Text(
                           'This is only a foretaste of what is to come, and only the shadow of what is going to be.',
                           textAlign: TextAlign.center,
-                          style:
-                              STYHTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                          // style:
+                          //     STYHTheme.of(context).bodyMedium.override(
+                          //           fontFamily: 'Inter',
+                          //           fontSize: 16.0,
+                          //           letterSpacing: 0.0,
+                          //         ),
                         ),
                       ),
                       Text(
                         '- Alan Turing (Father of AI)',
                         textAlign: TextAlign.end,
-                        style: STYHTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              letterSpacing: 0.0,
-                            ),
+                        // style: STYHTheme.of(context).bodyMedium.override(
+                        //       fontFamily: 'Inter',
+                        //       letterSpacing: 0.0,
+                        //     ),
                       ),
                     ],
                   ),
@@ -114,12 +114,12 @@ class _IntroPageState extends State<IntroPage> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: STYHTheme.of(context).primary,
-                  textStyle: STYHTheme.of(context).titleSmall.override(
-                        fontFamily: 'Inter Tight',
-                        color: Colors.white,
-                        letterSpacing: 0.0,
-                      ),
+                  // color: STYHTheme.of(context).primary,
+                  // textStyle: STYHTheme.of(context).titleSmall.override(
+                  //       fontFamily: 'Inter Tight',
+                  //       color: Colors.white,
+                  //       letterSpacing: 0.0,
+                  //     ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -128,7 +128,7 @@ class _IntroPageState extends State<IntroPage> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  // color: STYHTheme.of(context).secondaryBackground,
                 ),
               ),
               FFButtonWidget(
@@ -142,12 +142,12 @@ class _IntroPageState extends State<IntroPage> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: STYHTheme.of(context).primary,
-                  textStyle: STYHTheme.of(context).titleSmall.override(
-                        fontFamily: 'Inter Tight',
-                        color: Colors.white,
-                        letterSpacing: 0.0,
-                      ),
+                  // color: STYHTheme.of(context).primary,
+                  // textStyle: STYHTheme.of(context).titleSmall.override(
+                  //       fontFamily: 'Inter Tight',
+                  //       color: Colors.white,
+                  //       letterSpacing: 0.0,
+                  //     ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),
                 ),

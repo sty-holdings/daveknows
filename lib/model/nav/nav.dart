@@ -2,19 +2,13 @@ import 'dart:async';
 
 import 'package:chat/pages/intro_page/intro_page_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/auth/custom_auth/custom_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/styh_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
+import '/model/styh_theme.dart';
+import '/model/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -283,13 +277,13 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
+              ? const Center(
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        STYHTheme.of(context).primary,
+                     valueColor: AlwaysStoppedAnimation<Color>(
+                        STYHTheme.priPurpleDeep,
                       ),
                     ),
                   ),
@@ -336,7 +330,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
