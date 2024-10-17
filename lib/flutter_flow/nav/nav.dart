@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:chat/pages/intro_page/intro_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
@@ -9,7 +10,7 @@ import '/auth/custom_auth/custom_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/styh_theme.dart';
 import '/flutter_flow/lat_lng.dart';
 import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -78,18 +79,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? LoginPageWidget() : IntroPageWidget(),
+          appStateNotifier.loggedIn ? LoginPageWidget() : IntroPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? LoginPageWidget() : IntroPageWidget(),
+              appStateNotifier.loggedIn ? LoginPageWidget() : IntroPage(),
         ),
         FFRoute(
           name: 'IntroPage',
           path: '/introPage',
-          builder: (context, params) => IntroPageWidget(),
+          builder: (context, params) => IntroPage(),
         ),
         FFRoute(
           name: 'LoginPage',
@@ -288,7 +289,7 @@ class FFRoute {
                     height: 50.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
+                        STYHTheme.of(context).primary,
                       ),
                     ),
                   ),

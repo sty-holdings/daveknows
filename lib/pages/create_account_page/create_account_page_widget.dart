@@ -1,4 +1,4 @@
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/styh_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -50,7 +50,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: STYHTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -62,7 +62,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                   width: 100.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: STYHTheme.of(context).secondaryBackground,
                   ),
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -74,7 +74,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                           width: double.infinity,
                           height: 140.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
+                            color: STYHTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
@@ -89,7 +89,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'brand.ai',
-                              style: FlutterFlowTheme.of(context)
+                              style: STYHTheme.of(context)
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Inter Tight',
@@ -108,7 +108,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               children: [
                                 Text(
                                   'Create an account',
-                                  style: FlutterFlowTheme.of(context)
+                                  style: STYHTheme.of(context)
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Inter Tight',
@@ -120,7 +120,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       0.0, 12.0, 0.0, 24.0),
                                   child: Text(
                                     'Let\'s get started by filling out the form below.',
-                                    style: FlutterFlowTheme.of(context)
+                                    style: STYHTheme.of(context)
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Inter',
@@ -142,7 +142,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Email',
-                                        labelStyle: FlutterFlowTheme.of(context)
+                                        labelStyle: STYHTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Inter',
@@ -150,7 +150,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primaryBackground,
                                             width: 2.0,
                                           ),
@@ -159,7 +159,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primary,
                                             width: 2.0,
                                           ),
@@ -168,7 +168,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -177,7 +177,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -185,10 +185,10 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                               BorderRadius.circular(12.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
+                                        fillColor: STYHTheme.of(context)
                                             .primaryBackground,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
+                                      style: STYHTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
@@ -214,7 +214,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
                                         labelText: 'Password',
-                                        labelStyle: FlutterFlowTheme.of(context)
+                                        labelStyle: STYHTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Inter',
@@ -222,7 +222,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primaryBackground,
                                             width: 2.0,
                                           ),
@@ -231,7 +231,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primary,
                                             width: 2.0,
                                           ),
@@ -240,7 +240,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -249,7 +249,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -257,7 +257,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                               BorderRadius.circular(12.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
+                                        fillColor: STYHTheme.of(context)
                                             .primaryBackground,
                                         suffixIcon: InkWell(
                                           onTap: () => safeSetState(
@@ -270,13 +270,13 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             _model.passwordVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
+                                      style: STYHTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
@@ -304,7 +304,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           !_model.passwordConfirmVisibility,
                                       decoration: InputDecoration(
                                         labelText: 'Confirm Password',
-                                        labelStyle: FlutterFlowTheme.of(context)
+                                        labelStyle: STYHTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Inter',
@@ -312,7 +312,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primaryBackground,
                                             width: 2.0,
                                           ),
@@ -321,7 +321,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .primary,
                                             width: 2.0,
                                           ),
@@ -330,7 +330,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -339,7 +339,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .error,
                                             width: 2.0,
                                           ),
@@ -347,7 +347,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                               BorderRadius.circular(12.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
+                                        fillColor: STYHTheme.of(context)
                                             .primaryBackground,
                                         suffixIcon: InkWell(
                                           onTap: () => safeSetState(
@@ -362,13 +362,13 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             _model.passwordConfirmVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: FlutterFlowTheme.of(context)
+                                            color: STYHTheme.of(context)
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
+                                      style: STYHTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
@@ -398,8 +398,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
+                                          STYHTheme.of(context).primary,
+                                      textStyle: STYHTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Inter Tight',
@@ -431,12 +431,12 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         TextSpan(
                                           text: 'Sign In here',
-                                          style: FlutterFlowTheme.of(context)
+                                          style: STYHTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
                                                 color:
-                                                    FlutterFlowTheme.of(context)
+                                                    STYHTheme.of(context)
                                                         .primary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
@@ -444,7 +444,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                               ),
                                         )
                                       ],
-                                      style: FlutterFlowTheme.of(context)
+                                      style: STYHTheme.of(context)
                                           .labelLarge
                                           .override(
                                             fontFamily: 'Inter',
@@ -475,7 +475,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                       width: 100.0,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: STYHTheme.of(context).secondaryBackground,
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: CachedNetworkImageProvider(

@@ -1,4 +1,4 @@
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/styh_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +7,14 @@ import 'package:provider/provider.dart';
 import 'intro_page_model.dart';
 export 'intro_page_model.dart';
 
-class IntroPageWidget extends StatefulWidget {
-  const IntroPageWidget({super.key});
+class IntroPage extends StatefulWidget {
+  const IntroPage({super.key});
 
   @override
-  State<IntroPageWidget> createState() => _IntroPageWidgetState();
+  State<IntroPage> createState() => _IntroPageState();
 }
 
-class _IntroPageWidgetState extends State<IntroPageWidget> {
+class _IntroPageState extends State<IntroPage> {
   late IntroPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -38,19 +38,19 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: STYHTheme.of(context).primaryBackground,
         body: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.052,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: STYHTheme.of(context).secondaryBackground,
             image: DecorationImage(
               fit: BoxFit.cover,
               image: Image.network(
                 'https://firebasestorage.googleapis.com/v0/b/sty-holdings.appspot.com/o/backgrounds%2Fdaveknows%2Fbrandbook-41.png?alt=media&token=7d62d03d-e30b-4b43-af32-1ae2671a66bd',
               ).image,
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(0.0),
@@ -64,14 +64,14 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: STYHTheme.of(context).secondaryBackground,
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: STYHTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(24.0),
@@ -84,7 +84,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                           'This is only a foretaste of what is to come, and only the shadow of what is going to be.',
                           textAlign: TextAlign.center,
                           style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                              STYHTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
@@ -94,7 +94,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                       Text(
                         '- Alan Turing (Father of AI)',
                         textAlign: TextAlign.end,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        style: STYHTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
                               letterSpacing: 0.0,
                             ),
@@ -114,8 +114,8 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                  color: STYHTheme.of(context).primary,
+                  textStyle: STYHTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter Tight',
                         color: Colors.white,
                         letterSpacing: 0.0,
@@ -128,7 +128,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: STYHTheme.of(context).secondaryBackground,
                 ),
               ),
               FFButtonWidget(
@@ -142,8 +142,8 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                  color: STYHTheme.of(context).primary,
+                  textStyle: STYHTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter Tight',
                         color: Colors.white,
                         letterSpacing: 0.0,
