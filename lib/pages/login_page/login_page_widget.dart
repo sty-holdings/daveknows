@@ -1,4 +1,4 @@
-import '/flutter_flow/styh_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -39,7 +39,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: STYHTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -51,7 +51,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   width: 100.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: STYHTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -68,7 +68,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               maxWidth: 602.0,
                             ),
                             decoration: BoxDecoration(
-                              color: STYHTheme.of(context)
+                              color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(16.0),
@@ -90,7 +90,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'brand.ai',
-                                      style: STYHTheme.of(context)
+                                      style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
                                             fontFamily: 'Inter Tight',
@@ -110,7 +110,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             maxWidth: 602.0,
                           ),
                           decoration: BoxDecoration(
-                            color: STYHTheme.of(context)
+                            color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
                         ),
@@ -130,7 +130,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     width: 100.0,
                     height: double.infinity,
                     decoration: BoxDecoration(
-                      color: STYHTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(

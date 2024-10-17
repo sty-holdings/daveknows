@@ -1,4 +1,4 @@
-import '/flutter_flow/styh_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'create_account_page_widget.dart' show CreateAccountPageWidget;

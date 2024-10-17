@@ -1,4 +1,4 @@
-import '/flutter_flow/styh_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -38,19 +38,19 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: STYHTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.052,
           decoration: BoxDecoration(
-            color: STYHTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).secondaryBackground,
             image: DecorationImage(
               fit: BoxFit.cover,
               image: Image.network(
                 'https://firebasestorage.googleapis.com/v0/b/sty-holdings.appspot.com/o/backgrounds%2Fdaveknows%2Fbrandbook-41.png?alt=media&token=7d62d03d-e30b-4b43-af32-1ae2671a66bd',
               ).image,
             ),
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(0.0),
@@ -64,14 +64,14 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
               Container(
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(24.0),
@@ -84,7 +84,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                           'This is only a foretaste of what is to come, and only the shadow of what is going to be.',
                           textAlign: TextAlign.center,
                           style:
-                              STYHTheme.of(context).bodyMedium.override(
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
@@ -94,7 +94,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                       Text(
                         '- Alan Turing (Father of AI)',
                         textAlign: TextAlign.end,
-                        style: STYHTheme.of(context).bodyMedium.override(
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
                               letterSpacing: 0.0,
                             ),
@@ -114,8 +114,8 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: STYHTheme.of(context).primary,
-                  textStyle: STYHTheme.of(context).titleSmall.override(
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter Tight',
                         color: Colors.white,
                         letterSpacing: 0.0,
@@ -128,7 +128,7 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: STYHTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
               FFButtonWidget(
@@ -142,8 +142,8 @@ class _IntroPageWidgetState extends State<IntroPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: STYHTheme.of(context).primary,
-                  textStyle: STYHTheme.of(context).titleSmall.override(
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter Tight',
                         color: Colors.white,
                         letterSpacing: 0.0,
