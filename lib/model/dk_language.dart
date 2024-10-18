@@ -46,7 +46,7 @@ class DkLanguage {
       countryRequired = L10nSet('countryRequired', 'You must enter your country.'),
       confirmPassword = L10nSet('confirmPassword', 'Confirm Password'),
       confirmPasswordHint = L10nSet('confirmPasswordHint', 'Re-enter Password'),
-      createAccount = L10nSet('createAccount', 'Create Account'),
+      createAccount = L10nSet('createAccount', 'Create an Account'),
       createAccountTitle_1 = L10nSet('createAccountTitle_1', 'Lets get to know each other 🙂'),
       createAccountTitle_2 = L10nSet('createAccountTitle_2', '📧 How to contact you? 📞'),
       createAccountTitle_3 = L10nSet('createAccountTitle_3', '🔐 Protecting your account! 🔐'),

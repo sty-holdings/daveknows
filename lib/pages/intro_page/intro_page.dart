@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:daveknows/components/fix_button.dart';
 import 'package:daveknows/model/const_assets.dart';
 import 'package:daveknows/model/const_marketing.dart';
 import 'package:daveknows/model/const_navigation.dart';
+import 'package:daveknows/model/const_assets.dart';
 import 'package:daveknows/model/dk_language.dart';
 import 'package:daveknows/model/dk_themes.dart';
 
@@ -36,6 +38,12 @@ class _IntroPageState extends State<IntroPage> {
     super.dispose();
   }
 
+  ImageProvider getImageProvider() {
+    return const CachedNetworkImageProvider(
+      ConstAssets.INTRO_PAGE_BACKGROUND_PATH,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -43,50 +51,68 @@ class _IntroPageState extends State<IntroPage> {
         child: Scaffold(
           key: scaffoldKey,
           body: SafeArea(
-            child: Column(
+            child: Stack(
+              alignment: Alignment.topCenter,
               children: [
                 Container(
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                  width: double.infinity,
-                  height: 100,
-                  child: Text('"${DkLanguage.alanTuringQuote1}"',
-                      style: DKThemes.quoteLargeWhite),
-                ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: Text(DkLanguage.alanTuringAuthor.$, style: DKThemes.quoteMediumWhite),
-                ),
-                const SizedBox(
-                  height: 150,
-                ),
-                FixButton(
-                  DkLanguage.accountExists.$,
-                  onPressed: () {
-                      // goNext(ConstNavigation.NAV_LOGIN);
-                    },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.white),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: getImageProvider(),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
-                FixButton(
-                  DkLanguage.createAccount.$,
-                  onPressed: () {
-                    // goNext(ConstNavigation.NAV_CREATE_ACCOUNT);
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.white),
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
+                Column(
+                  children: [
+                    const SizedBox(
+                      height: 150,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      ),
+                      width: double.infinity,
+                      height: 125,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        // Add 8 pixels of padding on all sides
+                        child: Text('"${DkLanguage.alanTuringQuote1}"',
+                            style: DKThemes.quoteMediumBlack),
+                      ),
+                    ),
+                    const SizedBox(height: 10,),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: Text(DkLanguage.alanTuringAuthor.$,
+                          style: DKThemes.quoteMediumWhite),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    FixButton(
+                      DkLanguage.accountExists.$,
+                      onPressed: () {
+                        // goNext(ConstNavigation.NAV_LOGIN);
+                      },
+                      style: DKThemes.primaryButtonLargeBlackOnWhite,
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    FixButton(
+                      DkLanguage.createAccount.$,
+                      onPressed: () {
+                        // goNext(ConstNavigation.NAV_LOGIN);
+                      },
+                      style: DKThemes.primaryButtonLargeBlackOnWhite,
+                    ),
+                    // const SizedBox(
+                    //   height: 40,
+                    // ),
+                  ],
+                )
               ],
             ),
           ),

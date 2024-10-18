@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DKThemes {
+  //
+  // Buttons
+  static ButtonStyle primaryButtonLargeBlackOnWhite = ButtonStyle(
+    textStyle: WidgetStateProperty.all<TextStyle>(buttonLargeBlack),
+    backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
+    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ),
+  );
+
   // Colors
   static const Color primary = Color(0xFF4B39EF);
   static const Color secondary = Color(0xFF9B7FED);
@@ -20,6 +32,12 @@ class DKThemes {
   static const Color info = Color(0xFFFFFFFF);
 
   // Text Themes
+  static TextStyle buttonLargeBlack = const TextStyle(
+      fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black);
+  static TextStyle buttonMediumBlack = const TextStyle(
+      fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black);
+  static TextStyle buttonSmallBlack = const TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w200, color: Colors.black);
   static TextStyle headlineLargeBlack = const TextStyle(
       fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black);
   static TextStyle headlineMediumBlack = const TextStyle(
@@ -32,14 +50,29 @@ class DKThemes {
       fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white);
   static TextStyle headlineSmallWhite = const TextStyle(
       fontSize: 16, fontWeight: FontWeight.w200, color: Colors.white);
-  static TextStyle quoteLargeWhite = const TextStyle(
+  static TextStyle quoteLargeBlack = const TextStyle(
+      fontStyle: FontStyle.italic,
+      fontSize: 24,
+      fontWeight: FontWeight.w600,
+      color: Colors.black);
+  static TextStyle quoteMediumBlack = const TextStyle(
+      fontStyle: FontStyle.italic,
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: Colors.black);
+  static TextStyle quoteSmallBlack = const TextStyle(
       fontStyle: FontStyle.italic,
       fontSize: 16,
+      fontWeight: FontWeight.w200,
+      color: Colors.black);
+  static TextStyle quoteLargeWhite = const TextStyle(
+      fontStyle: FontStyle.italic,
+      fontSize: 24,
       fontWeight: FontWeight.w600,
       color: Colors.white);
   static TextStyle quoteMediumWhite = const TextStyle(
       fontStyle: FontStyle.italic,
-      fontSize: 16,
+      fontSize: 20,
       fontWeight: FontWeight.w400,
       color: Colors.white);
   static TextStyle quoteSmallWhite = const TextStyle(
