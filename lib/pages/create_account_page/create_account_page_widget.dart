@@ -1,4 +1,5 @@
-import '/model/styh_theme.dart';
+import 'package:daveknows/model/dk_themes.dart';
+import 'package:daveknows/model/styh_theme.dart';
 import '/model/flutter_flow_util.dart';
 import '/model/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -50,7 +51,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: STYHTheme.secPurple,
+        backgroundColor: DKThemes.primaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -62,7 +63,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                   width: 100.0,
                   height: double.infinity,
                   decoration: const BoxDecoration(
-                    color: STYHTheme.secPurple,
+                    color: DKThemes.secondaryBackground,
                   ),
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -74,7 +75,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                           width: double.infinity,
                           height: 140.0,
                           decoration: const BoxDecoration(
-                            color: STYHTheme.secPurple,
+                            color: DKThemes.secondaryBackground,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
                               bottomRight: Radius.circular(16.0),
@@ -83,8 +84,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                             ),
                           ),
                           alignment: const AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                          child: const Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'brand.ai',
@@ -105,7 +106,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Create an account',
                                   // style: STYHTheme.of(context)
                                   //     .displaySmall
@@ -114,8 +115,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   //       letterSpacing: 0.0,
                                   //     ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                const Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 24.0),
                                   child: Text(
                                     'Let\'s get started by filling out the form below.',
@@ -130,7 +131,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 370.0,
                                     child: TextFormField(
                                       controller:
@@ -143,7 +144,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         labelText: 'Email',
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: const BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -151,7 +152,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: const BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -176,7 +177,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         //       BorderRadius.circular(12.0),
                                         // ),
                                         filled: true,
-                                        fillColor: STYHTheme.priPurpleDeep,
+                                        fillColor: DKThemes.primary,
                                       ),
                                       // style: STYHTheme.of(context)
                                       //     .bodyMedium
@@ -194,7 +195,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 370.0,
                                     child: TextFormField(
                                       controller: _model.passwordTextController,
@@ -211,16 +212,16 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         //       letterSpacing: 0.0,
                                         //     ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                          borderSide: const BorderSide(
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                          borderSide: const BorderSide(
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -245,7 +246,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         //       BorderRadius.circular(12.0),
                                         // ),
                                         filled: true,
-                                        fillColor: STYHTheme.priPurpleDeep,
+                                        fillColor: DKThemes.primary,
                                         // suffixIcon: InkWell(
                                         //   onTap: () => safeSetState(
                                         //     () => _model.passwordVisibility =
@@ -278,7 +279,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 370.0,
                                     child: TextFormField(
                                       controller:
@@ -298,16 +299,16 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         //       letterSpacing: 0.0,
                                         //     ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                          borderSide: const BorderSide(
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: STYHTheme.priPurpleDeep,
+                                          borderSide: const BorderSide(
+                                            color: DKThemes.primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -332,7 +333,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         //       BorderRadius.circular(12.0),
                                         // ),
                                         filled: true,
-                                        fillColor: STYHTheme.priPurpleDeep,
+                                        fillColor: DKThemes.primary,
                                         // suffixIcon: InkWell(
                                         //   onTap: () => safeSetState(
                                         //     () => _model
@@ -407,9 +408,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   child: RichText(
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
-                                    text: TextSpan(
+                                    text: const TextSpan(
                                       children: [
-                                        const TextSpan(
+                                        TextSpan(
                                           text: 'Already have an account? ',
                                           style: TextStyle(),
                                         ),
@@ -459,7 +460,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                       width: 100.0,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        color: STYHTheme.secPurple,
+                        color: DKThemes.primary,
                         image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: CachedNetworkImageProvider(

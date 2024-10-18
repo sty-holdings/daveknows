@@ -19,7 +19,7 @@ export 'lat_lng.dart';
 export 'place.dart';
 export 'uploaded_file.dart';
 export '../app_state.dart';
-export 'flutter_flow_model.dart';
+export 'styh_model.dart';
 export 'dart:math' show min, max;
 export 'dart:typed_data' show Uint8List;
 export 'dart:convert' show jsonEncode, jsonDecode;
@@ -266,8 +266,8 @@ extension IterableExt<T> on Iterable<T> {
       .toList();
 }
 
-void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
-    MyApp.of(context).setThemeMode(themeMode);
+// void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
+//     MyApp.of(context).setThemeMode(themeMode);
 
 void showSnackbar(
   BuildContext context,

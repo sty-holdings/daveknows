@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:daveknows/model/const_errors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -75,7 +76,7 @@ class CustomAuthManager {
     this.authenticationToken = authenticationToken;
     this.refreshToken = refreshToken;
     this.tokenExpiration = tokenExpiration;
-    this.uid = authUid;
+    uid = authUid;
 
     // Update the current user stream.
     final updatedUser = ChatAuthUser(
@@ -101,7 +102,7 @@ class CustomAuthManager {
       uid = _prefs.getString(_kUidKey);
     } catch (e) {
       if (kDebugMode) {
-        print('Error initializing auth: $e');
+        print('${ConstErrors.ERR_INITIALIZING_AUTH} $e');
       }
       return;
     }

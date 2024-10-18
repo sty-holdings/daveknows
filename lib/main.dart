@@ -1,3 +1,5 @@
+import 'package:daveknows/model/const_labels.dart';
+import 'package:daveknows/model/const_platform.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
@@ -73,13 +75,13 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'chat',
+      title: ConstLabels.App_Title,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [Locale('en', '')],
+      supportedLocales: const [Locale(ConstPlatform.english, '')],
       theme: ThemeData(
         brightness: Brightness.light,
         useMaterial3: false,

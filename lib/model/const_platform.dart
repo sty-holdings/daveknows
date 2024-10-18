@@ -4,10 +4,7 @@ import 'package:flutter/services.dart';
 
 class ConstPlatform {
   //
-  // Slogans
-  static const SLOGAN = 'Marketing Slogan';
-  //
-  // General
+  // Condition values
   static const EMPTY = '';
   static const MISSING = 'missing';
   static const TRUE = 'true';
@@ -16,4 +13,7 @@ class ConstPlatform {
   // Local storage
   static const dkLocalStorage = 'dkLocalStorage';
   static const skipWelcomePage = 'skipWelcomePage';
+  //
+  // Languages
+  static const english = 'en';
 }

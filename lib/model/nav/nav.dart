@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:chat/pages/intro_page/intro_page_widget.dart';
+import 'package:daveknows/pages/intro_page/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/auth/custom_auth/custom_auth_user_provider.dart';
 
-import '/index.dart';
-import '/model/styh_theme.dart';
-import '/model/flutter_flow_util.dart';
+import 'package:daveknows/index.dart';
+import 'package:daveknows/model/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -283,7 +282,7 @@ class FFRoute {
                     height: 50.0,
                     child: CircularProgressIndicator(
                      valueColor: AlwaysStoppedAnimation<Color>(
-                        STYHTheme.priPurpleDeep,
+                       Colors.black,
                       ),
                     ),
                   ),

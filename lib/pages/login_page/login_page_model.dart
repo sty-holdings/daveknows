@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
+class LoginPageModel extends STYHModel<LoginPageWidget> {
   @override
   void initState(BuildContext context) {}
 
